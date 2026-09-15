@@ -1,0 +1,57 @@
+/* ==========================================================================
+   RESPONSIVE OVERRIDES (mobile-first adjustments)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .hero .container { grid-template-columns: 1fr; }
+  .hero__media { order: -1; aspect-ratio: 16 / 10; }
+  .job-search { grid-template-columns: 1fr 1fr; }
+  .job-search .btn { grid-column: 1 / -1; }
+}
+
+@media (max-width: 860px) {
+  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+
+  .nav-menu {
+    display: none;
+    position: fixed; inset: 0 0 0 auto; width: min(84vw, 340px);
+    background: var(--paper-0); flex-direction: column; align-items: flex-start;
+    padding: 88px 26px 26px; gap: 6px; box-shadow: -12px 0 30px rgba(11,32,54,0.18);
+    overflow-y: auto;
+  }
+  .nav-menu.is-open { display: flex; }
+  .nav-menu a { display: block; width: 100%; padding: 12px 0; border-bottom: 1px solid var(--line-200); }
+  .nav-menu .btn { margin-top: 12px; width: 100%; }
+  body.nav-open { overflow: hidden; }
+
+  .nav-actions .lang-toggle { display: none; }
+  .nav-menu .lang-toggle-mobile { display: inline-flex; margin-top: 16px; }
+}
+
+@media (min-width: 861px) {
+  .lang-toggle-mobile { display: none; }
+}
+
+@media (max-width: 720px) {
+  .grid--3, .grid--2, .grid--4 { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .job-search { grid-template-columns: 1fr; margin-top: 24px; }
+  .btn-row .btn { width: 100%; }
+  .top-bar .container { justify-content: flex-start; }
+  .job-card__meta { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 520px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .section { padding: 44px 0; }
+  .wa-float span:not(.wa-float__icon-wrap) { display: none; }
+  .wa-float { padding: 14px; border-radius: 50%; }
+}
